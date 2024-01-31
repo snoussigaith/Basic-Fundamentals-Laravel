@@ -36,6 +36,8 @@
                     
                 </div>
                 <h1>About  page </h1>
+                <a href="{{url('/')}}">Home</a> | <a href="{{URL::to('/about')}}">About</a> | <a href="{{route('con')}}">Contact</a>
+
 
                 <div class="mt-16">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
