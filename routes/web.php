@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\CategoryController;
 //use App\Models\User;
 use Illuminate\Support\Facades\DB;
 
@@ -18,6 +19,8 @@ return view('about');
 });
 //Route::get('/contact','ContactController@index'); // laravel 7
 Route::get('/contactdflksdjfmshsdflmjdsf', [ContactController::class, 'index'])->name('con'); // laravel v8+
+//category controller
+Route::get('/category/all', [CategoryController::class, 'AllCat'])->name('all.category');
 
 Route::middleware([
     'auth:sanctum',
