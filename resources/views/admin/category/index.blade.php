@@ -35,10 +35,10 @@
     </tr>
   </thead>
   <tbody>
-    @php($i= 1)
+    <!-- @php($i= 1) -->
       @foreach($categories as $category)
     <tr>
-      <th scope="row">{{$i++}}</th>
+      <th scope="row">{{$categories->firstItem()+$loop->index}}</th>
       <td>{{$category->category_name}}</td>
       <td>{{$category->user_id}}</td>
       <td>
@@ -55,6 +55,7 @@
    
   </tbody>
 </table>
+{{ $categories->links() }}
 </div>
 
             </div>
