@@ -29,19 +29,27 @@
   <thead>
     <tr>
       <th scope="col">Serial Num</th>
-      <th scope="col">Name</th>
-      <th scope="col">Email</th>
+      <th scope="col">Category Name</th>
+      <th scope="col">User</th>
       <th scope="col">Created at</th>
     </tr>
   </thead>
   <tbody>
- 
+    @php($i= 1)
+      @foreach($categories as $category)
     <tr>
-      <th scope="row"></th>
-      <td></td>
-      <td></td>
-      <td></td>
+      <th scope="row">{{$i++}}</th>
+      <td>{{$category->category_name}}</td>
+      <td>{{$category->user_id}}</td>
+      <td>
+        @if($category->created_at == NULL)
+        <span class="text-danger">No Date Set</span>
+        @else
+        {{$category->created_at->diffForHumans()}}
+        @endif
+      </td>
     </tr>
+    @endforeach
     
  
    
