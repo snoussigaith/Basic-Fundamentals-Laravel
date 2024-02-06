@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\BrandController;
+
 //use App\Models\User;
 use Illuminate\Support\Facades\DB;
 
@@ -27,6 +29,9 @@ Route::post('/category/update/{id}', [CategoryController::class, 'Update']);
 Route::get('/softdelete/category/{id}', [CategoryController::class, 'SoftDelete']);
 Route::get('/category/restore/{id}', [CategoryController::class, 'Restore']);
 Route::get('/category/pdelete/{id}', [CategoryController::class, 'Pdelete']);
+//for brand
+Route::get('/brand/all', [BrandController::class, 'AllBrand'])->name('all.brands');
+
 
 Route::middleware([
     'auth:sanctum',
