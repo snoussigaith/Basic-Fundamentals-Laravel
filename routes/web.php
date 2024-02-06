@@ -31,6 +31,7 @@ Route::get('/category/restore/{id}', [CategoryController::class, 'Restore']);
 Route::get('/category/pdelete/{id}', [CategoryController::class, 'Pdelete']);
 //for brand
 Route::get('/brand/all', [BrandController::class, 'AllBrand'])->name('all.brands');
+Route::post('/brand/add', [BrandController::class, 'StoreBrand'])->name('store.brand');
 
 
 Route::middleware([
